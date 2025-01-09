@@ -1,0 +1,15 @@
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\bin\Debug\net9.0\NewApp.exe
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\bin\Debug\net9.0\NewApp.deps.json
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\bin\Debug\net9.0\NewApp.runtimeconfig.json
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\bin\Debug\net9.0\NewApp.dll
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\bin\Debug\net9.0\NewApp.pdb
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\obj\Debug\net9.0\NewApp.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\obj\Debug\net9.0\NewApp.AssemblyInfoInputs.cache
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\obj\Debug\net9.0\NewApp.AssemblyInfo.cs
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\obj\Debug\net9.0\NewApp.csproj.CoreCompileInputs.cache
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\obj\Debug\net9.0\NewApp.sourcelink.json
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\obj\Debug\net9.0\NewApp.dll
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\obj\Debug\net9.0\refint\NewApp.dll
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\obj\Debug\net9.0\NewApp.pdb
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\obj\Debug\net9.0\NewApp.genruntimeconfig.cache
+c:\Users\Admin\Desktop\PTPMQL Nhom02\NewApp\obj\Debug\net9.0\ref\NewApp.dll
