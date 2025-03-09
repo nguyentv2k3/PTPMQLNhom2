@@ -1,0 +1,19 @@
+@model YourNamespace.Models.BMIModel
+
+<h2>Tính chỉ số BMI</h2>
+
+<form method="post">
+    <label>Chiều cao (m):</label>
+    <input asp-for="Height" type="number" step="0.01" required />
+
+    <label>Cân nặng (kg):</label>
+    <input asp-for="Weight" type="number" step="0.1" required />
+
+    <button type="submit">Tính BMI</button>
+</form>
+
+@if (Model.BMI > 0)
+{
+    <h3>Chỉ số BMI: @Model.BMI.ToString("0.00")</h3>
+    <h3>Đánh giá: @Model.BMICategory</h3>
+}

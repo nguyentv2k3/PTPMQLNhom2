@@ -1,0 +1,21 @@
+@model YourNamespace.Models.GradeModel
+
+<h2>Tính điểm môn học</h2>
+
+<form method="post">
+    <label>Điểm A:</label>
+    <input asp-for="A" type="number" step="0.1" required />
+
+    <label>Điểm B:</label>
+    <input asp-for="B" type="number" step="0.1" required />
+
+    <label>Điểm C:</label>
+    <input asp-for="C" type="number" step="0.1" required />
+
+    <button type="submit">Tính điểm</button>
+</form>
+
+@if (Model.FinalScore > 0)
+{
+    <h3>Điểm tổng kết: @Model.FinalScore.ToString("0.00")</h3>
+}
