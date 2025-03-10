@@ -1,4 +1,4 @@
-namespace YourNamespace.Models
+namespace FirstWebMVC.Models
 {
     public class GradeModel
     {

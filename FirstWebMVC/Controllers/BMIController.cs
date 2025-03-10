@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using YourNamespace.Models;
+using FirstWebMVC.Models;
 
-namespace YourNamespace.Controllers
+namespace FirstWebMVC.Controllers
 {
     public class BMIController : Controller
     {

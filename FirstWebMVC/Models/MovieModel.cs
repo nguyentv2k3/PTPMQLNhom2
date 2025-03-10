@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
-namespace MvcMovie.Models;
+namespace FirstWebMVC.Models
+{
 public class Movie 
 {
     public int Id { get; set; }
@@ -8,4 +9,5 @@ public class Movie
     public DateTime ReleaseDate { get; set; }
     public string? Genre { get; set; }
     public decimal Price { get; set; }
+}
 }
