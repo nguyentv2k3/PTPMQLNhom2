@@ -7,3 +7,10 @@
   </PropertyGroup>
 
 </Project>
+<ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="latest" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SQLite" Version="latest" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="latest" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="latest" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="latest" />
+</ItemGroup>
