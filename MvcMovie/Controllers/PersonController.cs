@@ -2,9 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
+
 using MvcMovie.Models.Process;
 using OfficeOpenXml;
-using X.PagedList;
+using X.PagedList.Extensions;
 
 
 
@@ -20,10 +21,8 @@ namespace MvcMovie.Controllers
         }
         public async Task<IActionResult> Index(int? page)
         {
-           var model = await _context.Person
-        .OrderBy(p => p.PersonId)
-        .ToPagedListAsync(page ?? 1, 5);
-
+            var persons = await _context.Person.ToListAsync(); // async
+            var model = persons.ToPagedList(page ?? 1, 5);
             return View(model);
         }
         /*public async Task<IActionResult> Index()
@@ -149,7 +148,7 @@ namespace MvcMovie.Controllers
             {
                 //rename file when upload to server
                 var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
-                var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/MvcMovie/Uploads/Excels" , fileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels" , fileName);
                 var fileLocation = new FileInfo(filePath).ToString();
                 using(var stream = new FileStream(filePath, FileMode.Create))
                 {
