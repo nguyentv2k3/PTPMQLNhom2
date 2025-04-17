@@ -58,6 +58,12 @@ namespace MvcMovie.Controllers
         {
             if (ModelState.IsValid)
             {
+                  // Kiểm tra xem PersonId đã tồn tại hay chưa  
+                 if (_context.Customer.Any(c => c.PersonId == customer.PersonId))  
+        {  
+                    ModelState.AddModelError("PersonId", "PersonId already exists.");  
+                    return View(customer);  
+        }
                 _context.Add(customer);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
