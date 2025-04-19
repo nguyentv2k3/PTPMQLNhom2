@@ -8,7 +8,9 @@ namespace MvcMovie.Models.Process
     {
         public DataTable ExcelToDataTable(string path)
         {
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Bắt buộc cho EPPlus
+           ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+
 
             using (var package = new ExcelPackage(new FileInfo(path)))
             {

@@ -25,11 +25,7 @@ namespace MvcMovie.Controllers
             var model = persons.ToPagedList(page ?? 1, 5);
             return View(model);
         }
-        /*public async Task<IActionResult> Index()
-        {
-            var model = await _context.Person.ToListAsync();
-            
-        }*/
+        
         public IActionResult Create()
         {
             return View();
@@ -140,15 +136,18 @@ namespace MvcMovie.Controllers
         if (file != null)
         {
             string fileExtension = Path.GetExtension(file.FileName);
-            if (fileExtension != ".xls" && fileExtension != "xlsx")
+            if (fileExtension != ".xls" && fileExtension != ".xlsx")
             {
                 ModelState.AddModelError("", "Please choose excel file to upload!");
             }
             else
             {
                 //rename file when upload to server
-                var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
-                var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels" , fileName);
+                var fileName = Path.GetFileNameWithoutExtension(file.FileName);
+                var uniqueFileName = fileName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + fileExtension;
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads", "Excels", uniqueFileName);
+
+                //var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels" , fileName);
                 var fileLocation = new FileInfo(filePath).ToString();
                 using(var stream = new FileStream(filePath, FileMode.Create))
                 {
@@ -165,8 +164,11 @@ namespace MvcMovie.Controllers
                         ps.PersonId = dt.Rows[i][0].ToString();
                         ps.FullName = dt.Rows[i][1].ToString();
                         ps.Address = dt.Rows[i][2].ToString();
-                        //add object to context
-                        _context.Add(ps);
+                        // Nếu PersonId chưa tồn tại thì mới add
+                        if (!_context.Person.Any(p => p.PersonId == ps.PersonId))
+                        {
+                            _context.Add(ps);
+                        }
                     }
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
@@ -178,7 +180,8 @@ namespace MvcMovie.Controllers
     public IActionResult Download()
     
     {
-        ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+      ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
         //Name the file when downloading
         var fileName = "YourFileName" + ".xlsx";
         using(ExcelPackage excelPackage = new ExcelPackage())
