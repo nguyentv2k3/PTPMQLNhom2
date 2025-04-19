@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
 
 using MvcMovie.Models.Process;
 using OfficeOpenXml;
@@ -19,17 +21,28 @@ namespace MvcMovie.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index(int? page)
-        {
-            var persons = await _context.Person.ToListAsync(); // async
-            var model = persons.ToPagedList(page ?? 1, 5);
-            return View(model);
-        }
-        
-        public IActionResult Create()
-        {
-            return View();
-        }
+        public async Task<IActionResult> Index(int? page, int? pageSize)
+{
+    ViewBag.PageSize = new List<SelectListItem>()
+    {
+        new SelectListItem() {Value = "3", Text = "3"},
+        new SelectListItem() {Value = "5", Text = "5"},
+        new SelectListItem() {Value = "10", Text = "10"},
+        new SelectListItem() {Value = "15", Text = "15"},
+        new SelectListItem() {Value = "25", Text = "25"},
+        new SelectListItem() {Value = "50", Text = "50"},
+    };
+
+    int pagesize = pageSize ?? 3;
+    ViewBag.psize = pagesize;
+
+    var persons = await _context.Person.ToListAsync();
+    var model = persons.ToPagedList(page ?? 1, pagesize);
+
+    return View(model);
+}
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PersonId,FullName,Address")] Person person)
