@@ -142,10 +142,10 @@ namespace MvcMovie.Controllers
             }
             else
             {
-                //rename file when upload to server
-                var fileName = Path.GetFileNameWithoutExtension(file.FileName);
-                var uniqueFileName = fileName + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + fileExtension;
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads", "Excels", uniqueFileName);
+                // Giữ nguyên tên file ban đầu
+                var fileName = Path.GetFileName(file.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads", "Excels", fileName);
+
 
                 //var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels" , fileName);
                 var fileLocation = new FileInfo(filePath).ToString();
