@@ -41,7 +41,11 @@ namespace MvcMovie.Controllers
 
     return View(model);
 }
-
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
