@@ -21,6 +21,18 @@ namespace MvcMovie.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ApplicationUser>().ToTable("Users");
+            modelBuilder.Entity<IdentityRole>().ToTable("Roles");
+            modelBuilder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
+            modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
+            modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");
+            modelBuilder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
+            modelBuilder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
+            modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
+
+
+
+
 
             // Cấu hình kế thừa TPH (Table per Hierarchy)
             modelBuilder.Entity<Person>()

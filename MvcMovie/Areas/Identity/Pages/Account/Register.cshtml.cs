@@ -24,7 +24,6 @@ namespace MvcMovie.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {
-       
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IUserStore<ApplicationUser> _userStore;
@@ -71,16 +70,11 @@ namespace MvcMovie.Areas.Identity.Pages.Account
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
         public class InputModel
-            
         {
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [Display(Name = "Full Name")]
-            public string FullName { get; set; }
-
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -120,7 +114,6 @@ namespace MvcMovie.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
-                user.FullName = Input.FullName;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
