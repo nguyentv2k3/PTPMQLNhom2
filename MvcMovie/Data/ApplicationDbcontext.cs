@@ -28,7 +28,7 @@ namespace MvcMovie.Data
             modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");
             modelBuilder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
             modelBuilder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
-            modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
+            
 
 
 

@@ -455,8 +455,10 @@ C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\MvcMovie.dll
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\MvcMovie.pdb
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\Azure.Core.dll
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\Azure.Identity.dll
+C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\EPPlus.dll
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\Humanizer.dll
+C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\MailKit.dll
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -521,6 +523,7 @@ C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\Microsoft.VisualSt
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\MimeKit.dll
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\Mono.TextTemplating.dll
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\Users\Admin\Desktop\PTPMQLNhom02\MvcMovie\bin\Debug\net9.0\NuGet.Common.dll
