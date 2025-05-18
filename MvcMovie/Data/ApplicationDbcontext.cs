@@ -16,6 +16,8 @@ namespace MvcMovie.Data
         public DbSet<Person> Person { get; set; }
         public DbSet<MvcMovie.Models.Customer> Customer { get; set; } = default!;
         public DbSet<MvcMovie.Models.Employee> Employee { get; set; } = default!;
+        public DbSet<Employee> Employees { get; set; }
+
 
         // Thêm đoạn cấu hình OnModelCreating này
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,7 +30,7 @@ namespace MvcMovie.Data
             modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");
             modelBuilder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
             modelBuilder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
-            
+
 
 
 
@@ -38,7 +40,7 @@ namespace MvcMovie.Data
             modelBuilder.Entity<Person>()
                 .UseTphMappingStrategy()
                 .HasDiscriminator<string>("Discriminator")
-                
+
                 .HasValue<Person>("Person")
                 .HasValue<Employee>("Employee")
                 .HasValue<Customer>("Customer"); // Nếu không dùng Customer thì xóa dòng này

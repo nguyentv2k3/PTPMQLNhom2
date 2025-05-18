@@ -24,27 +24,37 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.Configure<IdentityOptions>(options =>
+builder.Services.AddTransient<EmployeeSeeder>();
+var app = builder.Build();
+using (var scope = app.Services.CreateScope())
 {
-    //default lockout setting
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
-    options.Lockout.MaxFailedAccessAttempts = 5;
-    options.Lockout.AllowedForNewUsers = true;
+    var services = scope.ServiceProvider;
+    var seeder = services.GetRequiredService<EmployeeSeeder>();
+    seeder.SeedEmployees(1000);
 
-    //config password
-    options.Password.RequireDigit = true;
-    options.Password.RequiredLength = 8;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequireUppercase = true;
-    options.Password.RequireLowercase = false;
+}
 
-    //config login
-    options.SignIn.RequireConfirmedEmail = false;
-    options.SignIn.RequireConfirmedPhoneNumber = false;
+    builder.Services.Configure<IdentityOptions>(options =>
+    {
+        //default lockout setting
+        options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+        options.Lockout.MaxFailedAccessAttempts = 5;
+        options.Lockout.AllowedForNewUsers = true;
 
-    //config user
-    options.User.RequireUniqueEmail = true;
-});
+        //config password
+        options.Password.RequireDigit = true;
+        options.Password.RequiredLength = 8;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequireUppercase = true;
+        options.Password.RequireLowercase = false;
+
+        //config login
+        options.SignIn.RequireConfirmedEmail = false;
+        options.SignIn.RequireConfirmedPhoneNumber = false;
+
+        //config user
+        options.User.RequireUniqueEmail = true;
+    });
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
@@ -60,7 +70,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 });
 
-var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
